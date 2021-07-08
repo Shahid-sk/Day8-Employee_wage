@@ -1,54 +1,47 @@
 package empwage;
 
 public class Empwage {
+	public static final int IS_PARTTIME_PRESENT = 2;
+	public static final int IS_FULLTIME_PRESENT = 1;
+	public static final int EMPLOYEE_WAGE_PERHOUR = 20;
+	public static final int MAX_HOURS_ALLOWED = 100;
+	public static final int DAYS_IN_A_MONTH = 20;
 
 	public static void main(String[] args) {
-		int IS_EMP_FULLTIME_PRESENT = 1;
-		int IS_EMP_PARTTIME_PRESENT = 2;
-		int WAGE_PERHOUR = 20;
-		int FULL_DAYHOUR = 8;
-		int PART_TIMEHOUR = 4;
-		int DAILY_EMPWAGE = 0;
-		int WORK_DAYS = 20;
-		int MONTLY_EMPWAGE = 0;
-		System.out.println("Welcome to Employee wage simulation program");
+		int monthlywage = 0;
+		int totalworkingDays = 0;
+		int totalEmployeeHours = 0;
 
-		/** employee availability */
-		double empcheck = Math.floor(Math.random() * 10) % 3;
+		while (totalEmployeeHours < MAX_HOURS_ALLOWED && totalworkingDays < DAYS_IN_A_MONTH) {
+			int dailyEmpwage = 0;
+			totalworkingDays++;
+			int empHours = 0;
 
-		if (empcheck == IS_EMP_FULLTIME_PRESENT) {
-			System.out.println("Employee is for full time");
-			DAILY_EMPWAGE = WAGE_PERHOUR * FULL_DAYHOUR;
-			System.out.println("wage of full time employee is: " + DAILY_EMPWAGE);
-			MONTLY_EMPWAGE = DAILY_EMPWAGE * WORK_DAYS;
-			System.out.println("Montly wage of an employee is:" + MONTLY_EMPWAGE);
-		} else if (empcheck == IS_EMP_PARTTIME_PRESENT) {
-			System.out.println("Employee is for parttime");
-			DAILY_EMPWAGE = WAGE_PERHOUR * PART_TIMEHOUR;
-			System.out.println("Parttime wage of employee is: " + DAILY_EMPWAGE);
-			MONTLY_EMPWAGE = (DAILY_EMPWAGE * WORK_DAYS);
-			System.out.println("Montly wage of an employee is:" + MONTLY_EMPWAGE);
-		} else {
-			System.out.println("Employee is absent");
+			double empcheck = Math.floor(Math.random() * 10) % 3;
+
+			switch ((int) empcheck) {
+			case IS_FULLTIME_PRESENT:
+				empHours = 8;
+				System.out.println("employee is present for full time");
+				break;
+			case IS_PARTTIME_PRESENT:
+				empHours = 4;
+				System.out.println("employee is present for part time");
+				break;
+
+			default:
+				empHours = 0;
+				System.out.println("Employee is absent");
+				break;
+			}
+			dailyEmpwage = EMPLOYEE_WAGE_PERHOUR * empHours;
+			totalEmployeeHours = totalEmployeeHours * empHours;
+			monthlywage = monthlywage + dailyEmpwage;
+			System.out.println("employee wage is: " + dailyEmpwage);
 		}
-
-		/* Swithcase started */
-		switch ((int) empcheck) {
-		case 1:
-			System.out.println("Employee is fulltime present");
-			DAILY_EMPWAGE = WAGE_PERHOUR * FULL_DAYHOUR;
-			MONTLY_EMPWAGE = DAILY_EMPWAGE * WORK_DAYS;
-			System.out.println("Montly wage of an employee is:" + MONTLY_EMPWAGE);
-			break;
-		case 2:
-			System.out.println("Employee is parttime present");
-			DAILY_EMPWAGE = WAGE_PERHOUR * PART_TIMEHOUR;
-			MONTLY_EMPWAGE = DAILY_EMPWAGE * WORK_DAYS;
-			System.out.println("Montly wage of an employee is:" + MONTLY_EMPWAGE);
-			break;
-		default:
-			System.out.println("Employee is absent");
-		}
-		System.out.println("Employee wage is:" + DAILY_EMPWAGE);
+		System.out.println("total employee hours : " + totalEmployeeHours);
+		System.out.println("total employee working days : " + totalworkingDays);
+		System.out.println("monthly employee wage : " + monthlywage);
 	}
+
 }
