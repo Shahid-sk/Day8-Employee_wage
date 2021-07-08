@@ -1,9 +1,9 @@
 package empwage;
 
 public class Empwage {
-		public static final int IS_EMP_FULLTIME_PRESENT = 1;
-		public static final int IS_EMP_PARTTIME_PRESENT =2;
-		public static final int WAGE_PERHOUR = 20;
+	public static final int IS_EMP_FULLTIME_PRESENT = 1;
+	public static final int IS_EMP_PARTTIME_PRESENT =2;
+	public static final int WAGE_PERHOUR = 20;
 	
 	public static void main(String[] args) {
 		
