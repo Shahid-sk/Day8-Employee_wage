@@ -1,8 +1,8 @@
 package empwage;
 
 public class Empwage {
-		public static final int WAGE_PERHOUR = 20;
-		public static final int FULL_DAYHOUR = 8;
+	public static final int WAGE_PERHOUR = 20;
+	public static final int FULL_DAYHOUR = 8;
 
 	public static void main(String[] args) {
 		int IS_EMP_PRESENT = 1;
