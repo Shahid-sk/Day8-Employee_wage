@@ -1,15 +1,17 @@
 package empwage;
 
-public class Empwage {
+	public class Empwage {
+		public static final int IS_EMP_FULLTIME_PRESENT = 1;
+		public static final int IS_EMP_PARTTIME_PRESENT = 2;
+		public static final int WAGE_PERHOUR = 20;
+		public static final  int WORK_DAYS = 20;
 
 	public static void main(String[] args) {
-		int IS_EMP_FULLTIME_PRESENT = 1;
-		int IS_EMP_PARTTIME_PRESENT = 2;
-		int WAGE_PERHOUR = 20;
+		
 		int FULL_DAYHOUR = 8;
 		int PART_TIMEHOUR = 4;
 		int DAILY_EMPWAGE = 0;
-		int WORK_DAYS = 20;
+		
 		int MONTLY_EMPWAGE = 0;
 		System.out.println("Welcome to Employee wage simulation program");
 
