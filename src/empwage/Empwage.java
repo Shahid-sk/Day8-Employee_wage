@@ -1,11 +1,11 @@
 package empwage;
 
 public class Empwage {
+		public static final int WAGE_PERHOUR = 20;
+		public static final int FULL_DAYHOUR = 8;
 
 	public static void main(String[] args) {
 		int IS_EMP_PRESENT = 1;
-		int WAGE_PERHOUR = 20;
-		int FULL_DAYHOUR = 8;
 		System.out.println("Welcome to Employee wage simulation program");
 
 		/** employee availability */
